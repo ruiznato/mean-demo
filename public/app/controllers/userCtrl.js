@@ -8,8 +8,6 @@ angular.module('userCtrl', ['userService'])
         User.all()
             .success(function (data) {
                 vm.processing = false;
-                console.log(data);
-
                 vm.users = data;
             });
 

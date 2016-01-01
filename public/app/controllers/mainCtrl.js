@@ -25,6 +25,11 @@ angular.module('mainCtrl', [])
                 vm.processing = false;
 
                 if (data.success) {
+                    Auth.getUser()
+                        .then(function(data) {
+                            console.log(data.data)
+                            vm.user = data.data;
+                        });
                     $location.path('/users');
                 } else {
                     vm.error = data.message;
